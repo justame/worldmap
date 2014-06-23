@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'gon'
 gem 'mysql2'
+gem 'mysql'
 gem 'rails_admin', '~> 0.6.2'
 gem 'pry-rails', :group => :development
 

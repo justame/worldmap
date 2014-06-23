@@ -66,6 +66,7 @@ GEM
     mini_portile (0.6.0)
     minitest (4.7.5)
     multi_json (1.10.1)
+    mysql (2.9.1)
     mysql2 (0.3.16)
     nested_form (0.3.2)
     nokogiri (1.6.2.1)
@@ -155,6 +156,7 @@ DEPENDENCIES
   gon
   jbuilder (~> 1.2)
   jquery-rails
+  mysql
   mysql2
   pry-rails
   rails (= 4.0.2)
