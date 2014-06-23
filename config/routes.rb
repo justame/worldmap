@@ -1,10 +1,15 @@
 Worldmap::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'maps#index'
-
+  
+  # get ':id/maps' => 'maps#show'
+  get ':name/maps' => 'maps#show'
+  get ':id/maps/edit' => 'maps#edit'
+  post ':id/maps' => 'maps#create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

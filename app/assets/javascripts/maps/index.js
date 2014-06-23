@@ -1,19 +1,36 @@
 var mapsHandler ={};
 
 mapsHandler.init = function(){
-	var data = {"ru": 1};
+	var data = {};
+	var countryCodes = _.map(gon.user_countries, function(country){
+		return country.country_code;
+	});
 
-	jQuery('#vmap').vectorMap({
+	countryCodes.forEach(function(countryCode){
+		data[countryCode] = 100;
+	});
+
+	
+
+	var maps = jQuery('#vmap').vectorMap({
 	    map: 'world_en',
-	    backgroundColor: null,
+	    backgroundColor: '#a5bfdd',
 	    color: '#ffffff',
 	    hoverOpacity: 0.7,
 	    selectedColor: '#666666',
 	    enableZoom: true,
 	    showTooltip: true,
 	    values: data,
-	    scaleColors: ['#FFFFFF', '#FF0000'],
-	    normalizeFunction: 'linear'
+	    scaleColors: ['#FFFF99', '#FF0000'],
+	    normalizeFunction: 'linear',
+     	onRegionClick: function(element, code, region){
+        var country = {};
+        country[code] = '#FF0000';
+        jQuery('#vmap').vectorMap('set', 'colors',country);
+        $.post('/' + gon.user_id + '/maps', {
+        	country_code: code
+        })
+	    }
 	});	
 }
 

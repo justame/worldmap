@@ -3,8 +3,11 @@
 <head>
   <title>Worldmap</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+ 	<%= include_gon %>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.compat.js"></script>
+ 	
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <!-- <%= csrf_meta_tags %> -->
 </head>
 <body>
 
