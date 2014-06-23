@@ -13,6 +13,7 @@ class MapsController < ApplicationController
 	end
 
 	def edit
+		gon.edit = true
 		user_id = params[:id]
 		gon.user_id = user_id
 		

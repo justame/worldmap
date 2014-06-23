@@ -27,9 +27,11 @@ mapsHandler.init = function(){
         var country = {};
         country[code] = '#FF0000';
         jQuery('#vmap').vectorMap('set', 'colors',country);
-        $.post('/' + gon.user_id + '/maps', {
-        	country_code: code
-        })
+        if(gon.edit){
+	        $.post('/' + gon.user_id + '/maps', {
+	        	country_code: code
+	        })
+        }
 	    }
 	});	
 }
