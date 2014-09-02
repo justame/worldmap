@@ -31,7 +31,7 @@ gem 'mysql2'
 gem 'mysql'
 gem 'rails_admin', '~> 0.6.2'
 gem 'pry-rails', :group => :development
-
+gem 'newrelic_rpm'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

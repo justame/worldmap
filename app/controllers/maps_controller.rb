@@ -14,6 +14,7 @@ class MapsController < ApplicationController
 
 	def edit
 		user_name = params[:name]
+		@user = User.find_by(name: user_name)
 		user = User.find_by(name: user_name)
 		gon.edit = true
 		user_id = user[:id]
