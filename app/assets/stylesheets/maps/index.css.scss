@@ -78,3 +78,28 @@ h1{
 body{
 	background: #000 image-url("victoria-secret-kizlari.jpg") no-repeat fixed center center;;
 }
+
+
+.friends{
+	position: absolute;
+	left: 20px;
+	top: 10%;
+	background: #FFF;
+	box-shadow: 0 1px 3px 3px #A5BFDD;
+	border-radius: 6px;
+	padding: 5px;
+
+	h2{
+		font-size: 26px;
+		margin-bottom: 10px;
+	}
+	li{
+		width: 200px;
+		padding: 5px;
+		margin-bottom: 10px;
+
+		a{
+			display: block;
+		}
+	}
+}

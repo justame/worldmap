@@ -5,6 +5,7 @@ class MapsController < ApplicationController
 	end
 
 	def show
+		@users = User.all
 		user_name = params[:name]
 		@user = User.find_by(name: user_name)
 		

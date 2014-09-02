@@ -1,4 +1,18 @@
 <h1>
 	Countries Conquered By <%=@user.name %>
 </h1>
+<div class="friends">
+	<h2>
+		Friends Maps
+	</h2>
+	<div>
+		<ul>
+			<% @users.each do |u| %>
+				<li>
+					<%= link_to u.name, controller: "maps", action: "show", name:u.name %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
 <div id="vmap"></div>
