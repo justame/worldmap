@@ -28,9 +28,28 @@ mapsHandler.init = function(){
         country[code] = '#FF0000';
         jQuery('#vmap').vectorMap('set', 'colors',country);
         if(gon.edit){
-	        $.post('/' + gon.user_id + '/maps', {
-	        	country_code: code
-	        })
+					var deleteMap = false;
+					countryCodes.forEach(function(countryCode){
+						if(countryCode == code){
+							deleteMap = true;
+							return false;
+						}
+					});
+					if(deleteMap){
+						$.ajax({
+						  url: '/' + gon.user_id + '/maps/' + code,
+						  type: "post",
+						  data: {"_method":"delete"}
+						});
+		        country[code] = '#FFFFFF';
+		        jQuery('#vmap').vectorMap('set', 'colors',country);						
+					}else{
+		        $.post('/' + gon.user_id + '/maps', {
+		        	country_code: code
+		        })
+		        country[code] = '#FF0000';
+		        jQuery('#vmap').vectorMap('set', 'colors',country);
+					}
         }
 	    }
 	});	

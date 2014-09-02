@@ -10,6 +10,7 @@ Worldmap::Application.routes.draw do
   get ':name/maps' => 'maps#show'
   get ':name/maps/edit' => 'maps#edit'
   post ':id/maps' => 'maps#create'
+  delete ':id/maps/:country_code' => 'maps#delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
