@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140622233933) do
+ActiveRecord::Schema.define(version: 20140902192427) do
 
   create_table "user_countries", force: true do |t|
     t.integer  "user_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140622233933) do
     t.datetime "updated_at"
   end
 
-  add_index "user_countries", ["country_code"], name: "index_user_countries_on_country_code", unique: true, using: :btree
+  add_index "user_countries", ["user_id", "country_code"], name: "index_user_countries_on_user_id_and_country_code", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
