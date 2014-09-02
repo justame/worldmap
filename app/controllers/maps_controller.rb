@@ -13,11 +13,12 @@ class MapsController < ApplicationController
 	end
 
 	def edit
+		user_name = params[:name]
+		user = User.find_by(name: user_name)
 		gon.edit = true
-		user_id = params[:id]
+		user_id = user[:id]
 		gon.user_id = user_id
 		
-		user = User.find(user_id)
 		gon.user_countries = user.user_countries		
 		
 	end

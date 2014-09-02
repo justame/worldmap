@@ -8,7 +8,7 @@ Worldmap::Application.routes.draw do
   
   # get ':id/maps' => 'maps#show'
   get ':name/maps' => 'maps#show'
-  get ':id/maps/edit' => 'maps#edit'
+  get ':name/maps/edit' => 'maps#edit'
   post ':id/maps' => 'maps#create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
